@@ -277,15 +277,16 @@ var longerArray = longer(arr1, arr2);
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-function both(arr1,arr2) {
-  var arr3 = arr1.concat(arr2);
-  arr3.filter(function(elem, pos) {
-return arr3.indexOf(elem) == pos;
-});
-  return arr3;
+var both = (arr1, arr2) => {
+  return [
+    ...new Set(
+      arr1.concat(arr2).filter((x,i,arr) => {
+        return arr.indexOf(x) !== arr.lastIndexOf(x);
+      })
+    )
+  ]
 }
 
-both(arr1,arr2)
 
 
 
@@ -325,7 +326,7 @@ var colt = {
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
 
 
 
@@ -335,7 +336,7 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.splice(1, 1);
 
 
 ////////// PROBLEM 13 //////////
@@ -346,7 +347,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
+var users = [];
 
 
 
